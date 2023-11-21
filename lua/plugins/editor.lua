@@ -25,7 +25,7 @@ return {
         desc = "Find Plugin File",
       },
       {
-        ";f",
+        "<leader>ff",
         function()
           local builtin = require("telescope.builtin")
           builtin.find_files({
@@ -35,14 +35,14 @@ return {
         end,
       },
       {
-        ";r",
+        "<leader>fg",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep()
         end,
       },
       {
-        ";t",
+        "<leader>fh",
         function()
           local builtin = require("telescope.builtin")
           builtin.help_tags()
@@ -56,21 +56,21 @@ return {
         end,
       },
       {
-        ";e",
+        "<leader>fd",
         function()
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
         end,
       },
       {
-        ";s",
+        "<leader>ft",
         function()
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
       },
       {
-        "sf",
+        "<leader>bb",
         function()
           local telescope = require("telescope")
           local function telescope_buffer_dir()
