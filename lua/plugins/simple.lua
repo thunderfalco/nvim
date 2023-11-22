@@ -81,4 +81,25 @@ return {
       return {}
     end,
   },
+
+  {
+    "echasnovski/mini.starter",
+    version = "*",
+    config = function()
+      local starter = require("mini.starter")
+      starter.setup()
+    end,
+  },
+  {
+    "echasnovski/mini.sessions",
+    version = "*",
+    config = function()
+      local sessions = require("mini.sessions")
+      sessions.setup({
+        autoread = false,
+        autowrite = false,
+        directory = "~/nvim/sessions",
+      })
+    end,
+  },
 }
