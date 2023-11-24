@@ -79,7 +79,7 @@ return {
         end,
       },
       {
-        "<leader>fe",
+        "<leader>fc",
         function()
           local telescope = require("telescope")
           local function telescope_buffer_dir()
