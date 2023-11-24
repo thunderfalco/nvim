@@ -6,15 +6,24 @@ return {
       "nvim-telescope/telescope-file-browser.nvim",
       "smartpde/telescope-recent-files",
       "nvim-telescope/telescope-fzf-native.nvim",
+      "stevearc/aerial.nvim",
       build = "make",
       config = function()
         local telescope = require("telescope")
         telescope.load_extension("recent_files")
         telescope.load_extension("fzf")
+        telescope.load_extension("aerial")
       end,
     },
 
     keys = {
+      {
+        "<leader>fa",
+        function()
+          local telescope = require("telescope")
+          telescope.extensions.aerial.aerial()
+        end,
+      },
       {
         "<leader>fp",
         function()
@@ -70,7 +79,7 @@ return {
         end,
       },
       {
-        "<leader>bb",
+        "<leader>fe",
         function()
           local telescope = require("telescope")
           local function telescope_buffer_dir()

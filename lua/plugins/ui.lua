@@ -17,7 +17,21 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 10000,
+      timeout = 5000,
+      background_colour = "#000000",
     },
+  },
+  {
+    "xiyaowong/transparent.nvim",
+    config = function()
+      local transparent = require("transparent")
+      transparent.setup({
+        extra_groups = {
+          "NeoTreeNormal",
+          "NeoTreeNormalNC",
+          "NormalFloat",
+        },
+      })
+    end,
   },
 }

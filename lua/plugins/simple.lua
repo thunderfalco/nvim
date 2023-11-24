@@ -2,23 +2,19 @@ return {
 
   -- { "ellisonleao/gruvbox.nvim" },
 
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      --  colorscheme = "gruvbox",
+      colorscheme = "catppuccin-frappe",
     },
   },
 
   -- change trouble config
-  {
-    "folke/trouble.nvim",
-    -- opts will be merged with the parent spec
-    opts = { use_diagnostic_signs = true },
-  },
 
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  -- { "folke/trouble.nvim", enabled = false },
 
   -- add symbols-outline
   {
@@ -35,25 +31,6 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
-
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
-    end,
-  },
-
-  -- or you can return new options to override all the defaults
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
-      }
     end,
   },
 
@@ -79,27 +56,6 @@ return {
     "L3MON4D3/LuaSnip",
     keys = function()
       return {}
-    end,
-  },
-
-  {
-    "echasnovski/mini.starter",
-    version = "*",
-    config = function()
-      local starter = require("mini.starter")
-      starter.setup()
-    end,
-  },
-  {
-    "echasnovski/mini.sessions",
-    version = "*",
-    config = function()
-      local sessions = require("mini.sessions")
-      sessions.setup({
-        autoread = false,
-        autowrite = false,
-        directory = "~/nvim/sessions",
-      })
     end,
   },
 }
