@@ -32,6 +32,28 @@ return {
           "NormalFloat",
         },
       })
+
+      transparent.clear_prefix("BufferLine")
+      transparent.clear_prefix("NeoTree")
     end,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      local catp = require("catppuccin")
+      catp.setup({
+        transparent = vim.g.transparent_enabled,
+      })
+    end,
+  },
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-frappe",
+    },
   },
 }

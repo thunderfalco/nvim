@@ -13,6 +13,7 @@ local bubbles_theme = {
     a = { fg = colors.black, bg = colors.violet },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
+    x = { fg = colors.violet, bg = colors.black },
   },
 
   visual = { a = { fg = colors.black, bg = colors.cyan } },
@@ -51,9 +52,15 @@ return {
           lualine_a = {
             { "mode", separator = { left = "" }, right_padding = 2 },
           },
-          lualine_b = { { "filename" }, "branch" },
+          lualine_b = { { "filename", path = 1 }, "branch" },
           lualine_c = { "fileformat" },
-          lualine_x = {},
+          lualine_x = {
+            {
+              require("noice").api.status.command.get,
+              cond = require("noice").api.status.command.has,
+              color = { fg = colors.violet },
+            },
+          },
           lualine_y = { "filetype", "progress", "searchcount" },
           lualine_z = {
             { "location", separator = { right = "" }, left_padding = 2 },
